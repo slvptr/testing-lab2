@@ -3,12 +3,16 @@
  */
 package lab2;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import lab2.utils.CsvUtils;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+import java.io.FileNotFoundException;
+
+public class App {
+
+    public static void main(String[] args) throws FileNotFoundException {
+
+        CsvUtils csvUtils = new CsvUtils("cos.csv", "cos", -5, 5, 1, 0.1);
+        csvUtils.writeCsv();
     }
 }
+
