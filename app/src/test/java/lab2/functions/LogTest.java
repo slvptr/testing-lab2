@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @RunWith(JUnitParamsRunner.class)
 public class LogTest {
 
-    private final double eps = 0.1;
+    private final double eps = 0.01;
 
     @Test
     @Parameters({
@@ -17,7 +17,7 @@ public class LogTest {
             "3, 9",
     })
     public void calc(int a, int b) {
-        double delta = Math.abs(new Log(a, b).calc(eps) - 1);
-        Assert.assertTrue(delta <= eps);
+        double delta = Math.abs(new Log(a, b).calc(eps) - Math.log(b) / Math.log(a));
+        Assert.assertTrue(delta <= eps * 2);
     }
 }
