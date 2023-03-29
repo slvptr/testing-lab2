@@ -1,16 +1,20 @@
-package lab2.functions;
+package lab2.functions.basic;
 
+import lab2.functions.Func;
 import lab2.utils.MathUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
-public class Sin {
+public class Sin implements Func {
     private double x;
 
+    @Override
     public double calc(double eps) {
         double res = 0;
         double k = 0;
@@ -21,9 +25,5 @@ public class Sin {
         } while (Math.abs(res - Math.sin(x)) >= eps);
 
         return res;
-    }
-
-    public double calc() {
-        return calc(0.01);
     }
 }

@@ -1,12 +1,11 @@
-package lab2.functions;
+package lab2.functions.basic;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import lab2.functions.basic.Sin;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
 
 @RunWith(JUnitParamsRunner.class)
 public class SinTest {

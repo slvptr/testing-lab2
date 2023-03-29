@@ -3,16 +3,24 @@
  */
 package lab2;
 
+import lab2.functions.Func;
+import lab2.functions.trigonometric.Cos;
 import lab2.utils.CsvUtils;
+import org.checkerframework.checker.units.qual.C;
 
 import java.io.FileNotFoundException;
 
 public class App {
+    public static void main(String[] args) {
+        Func function = new Cos();
 
-    public static void main(String[] args) throws FileNotFoundException {
-
-        CsvUtils csvUtils = new CsvUtils("cos.csv", "cos", -5, 5, 1, 0.1);
-        csvUtils.writeCsv();
+        try {
+            CsvUtils csvUtils = new CsvUtils(String.format("csv/%s.csv",
+                    function.getClass().getSimpleName()),
+                    function, -3.14, 3.14, 0.2, 0.01);
+            csvUtils.writeCsv();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
     }
 }
-

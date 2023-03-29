@@ -1,7 +1,8 @@
-package lab2.functions;
+package lab2.functions.trigonometric;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import lab2.functions.trigonometric.Tg;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

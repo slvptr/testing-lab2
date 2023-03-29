@@ -1,20 +1,22 @@
-package lab2.functions;
+package lab2.functions.trigonometric;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import lab2.functions.trigonometric.Cos;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
-public class SecTest {
+public class CosTest {
 
-    private final double eps = 0.1;
+    private final double eps = 0.01;
 
     @Test
-    @Parameters({"0", "-1", "1", "3.14"})
+    @Parameters({"1.57", "3.14", "-5", "5"})
     public void calc(double x) {
-        double delta = Math.abs(new Sec(x).calc(eps) - (1 / Math.cos(x)));
+        double val = new Cos(x).calc(eps);
+        double delta = Math.abs(val - Math.cos(x));
         Assert.assertTrue(delta <= eps);
     }
 }

@@ -1,4 +1,4 @@
-package lab2.functions;
+package lab2.functions.logariphmic;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
@@ -7,16 +7,22 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
-@RunWith(JUnitParamsRunner.class)
 
-public class LnTest {
+@RunWith(JUnitParamsRunner.class)
+public class Log2Test {
+
     private final double eps = 0.01;
 
     @Test
-    @Parameters({"0.01", "1", "3.14", "5", "42", "1408"})
+    @Parameters({
+            "1",
+            "2",
+            "4",
+            "10",
+            "42"
+    })
     public void calc(double x) {
-        Ln ln = new Ln(x);
-        double delta = Math.abs(ln.calc(eps) - Math.log(x));
+        double delta = Math.abs(new Log2(x).calc(eps * eps) - Math.log(x) / Math.log(2));
         Assert.assertTrue(delta <= eps);
     }
 }

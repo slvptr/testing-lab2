@@ -1,16 +1,20 @@
-package lab2.functions;
+package lab2.functions.basic;
 
+import lab2.functions.Func;
 import lab2.utils.MathUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-public class Ln {
+public class Ln implements Func {
     private double x;
 
+    @Override
     public double calc(double eps) {
         if (x <= 0) throw new IllegalArgumentException();
         double res = 0;
@@ -33,9 +37,5 @@ public class Ln {
         }
 
         return res;
-    }
-
-    public double calc() {
-        return calc(0.01);
     }
 }

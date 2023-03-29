@@ -11,6 +11,19 @@ plugins {
     id 'application'
 }
 
+
+mainClassName = 'lab2.App'
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
+
+test {
+    useJUnit()
+}
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -33,5 +46,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'lab2.App'
+    mainClass = mainClassName
 }
