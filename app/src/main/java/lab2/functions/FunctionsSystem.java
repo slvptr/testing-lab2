@@ -5,47 +5,51 @@ import lab2.functions.basic.Sin;
 import lab2.functions.logariphmic.Log10;
 import lab2.functions.logariphmic.Log2;
 import lab2.functions.trigonometric.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.checkerframework.checker.units.qual.C;
 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 public class FunctionsSystem implements Func {
 
     private double x;
-    private final Cos cos;
-    private final Csc csc;
-    private final Ctg ctg;
-    private final Ln ln;
-    private final Log10 log10;
-    private final Log2 log2;
-    private final Sec sec;
-    private final Sin sin;
-    private final Tg tg;
+    private Cos cos;
+    private Csc csc;
+    private Ctg ctg;
+    private Ln ln;
+    private Log10 log10;
+    private Log2 log2;
+    private Sec sec;
+    private Sin sin;
+    private Tg tg;
 
-    public FunctionsSystem() {
-        cos = new Cos();
-        csc = new Csc();
-        ctg = new Ctg();
-        ln = new Ln();
-        log2 = new Log2();
-        log10 = new Log10();
-        sec = new Sec();
-        sin = new Sin();
-        tg = new Tg();
-    }
-
-    public void setX(double x) {
+    public void init(double x) {
         this.x = x;
-        cos.setX(x);
-        csc.setX(x);
-        ctg.setX(x);
-        ln.setX(x);
-        sec.setX(x);
-        sin.setX(x);
-        tg.setX(x);
-        log2.setX(x);
-        log10.setX(x);
-    }
+        this.cos = new Cos();
+        this.csc = new Csc();
+        this.ctg = new Ctg();
+        this.ln = new Ln();
+        this.sec = new Sec();
+        this.sin = new Sin();
+        this.tg = new Tg();
+        this.log2 = new Log2();
+        this.log10 = new Log10();
 
-    public double getX() {
-        return x;
+        cos.init(x);
+        csc.init(x);
+        ctg.init(x);
+        ln.init(x);
+        sec.init(x);
+        sin.init(x);
+        tg.init(x);
+        log2.init(x);
+        log10.init(x);
     }
 
     @Override

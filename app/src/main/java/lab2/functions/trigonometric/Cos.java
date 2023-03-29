@@ -14,6 +14,13 @@ import lombok.Setter;
 @Setter
 public class Cos implements Func {
     private double x;
+    private Sin sin;
+
+    public void init(double x) {
+        this.x = x;
+        this.sin = new Sin();
+        this.sin.init(x);
+    }
 
     @Override
     public double calc(double eps) {

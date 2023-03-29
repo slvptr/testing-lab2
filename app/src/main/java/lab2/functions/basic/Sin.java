@@ -14,6 +14,10 @@ import lombok.Setter;
 public class Sin implements Func {
     private double x;
 
+    public void init(double x) {
+        this.x = x;
+    }
+
     @Override
     public double calc(double eps) {
         double res = 0;

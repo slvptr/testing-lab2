@@ -15,7 +15,9 @@ public class SecTest {
     @Test
     @Parameters({"0", "-1", "1", "3.14"})
     public void calc(double x) {
-        double delta = Math.abs(new Sec(x).calc(eps) - (1 / Math.cos(x)));
+        Sec sec = new Sec();
+        sec.init(x);
+        double delta = Math.abs(sec.calc(eps) - (1 / Math.cos(x)));
         Assert.assertTrue(delta <= eps);
     }
 }

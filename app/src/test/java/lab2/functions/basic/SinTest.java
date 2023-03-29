@@ -15,7 +15,8 @@ public class SinTest {
     @Test
     @Parameters({"0", "-1", "1", "3.14", "-5", "5"})
     public void calc(double x) {
-        Sin sin = new Sin(x);
+        Sin sin = new Sin();
+        sin.init(x);
         double delta = Math.abs(sin.calc(eps) - Math.sin(x));
         Assert.assertTrue(delta <= eps);
     }

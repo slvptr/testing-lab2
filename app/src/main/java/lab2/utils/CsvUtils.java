@@ -22,7 +22,7 @@ public class CsvUtils {
     public void writeCsv() throws FileNotFoundException {
         try (PrintWriter writer = new PrintWriter(filename)) {
             for (double x = from; x <= to; x += step) {
-                function.setX(x);
+                function.init(x);
                 writer.println(x + "," + function.calc(exp));
             }
         }

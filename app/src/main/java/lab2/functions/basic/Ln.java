@@ -1,7 +1,6 @@
 package lab2.functions.basic;
 
 import lab2.functions.Func;
-import lab2.utils.MathUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +12,10 @@ import lombok.Setter;
 @Setter
 public class Ln implements Func {
     private double x;
+
+    public void init(double x) {
+        this.x = x;
+    }
 
     @Override
     public double calc(double eps) {

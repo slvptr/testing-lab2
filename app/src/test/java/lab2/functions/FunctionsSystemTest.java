@@ -23,7 +23,7 @@ public class FunctionsSystemTest {
     })
     public void calc(double arg, double expected) {
         FunctionsSystem functionsSystem = new FunctionsSystem();
-        functionsSystem.setX(arg);
+        functionsSystem.init(arg);
         Assert.assertTrue(Math.abs(functionsSystem.calc(eps * eps) - expected) < eps);
     }
 }

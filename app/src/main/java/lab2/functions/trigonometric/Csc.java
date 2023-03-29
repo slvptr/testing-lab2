@@ -14,9 +14,16 @@ import lombok.Setter;
 @Setter
 public class Csc implements Func {
     private double x;
+    private Sin sin;
+
+    public void init(double x) {
+        this.x = x;
+        this.sin = new Sin();
+        this.sin.init(x);
+    }
 
     @Override
     public double calc(double eps) {
-        return 1 / new Sin(x).calc(eps);
+        return 1 / sin.calc(eps);
     }
 }

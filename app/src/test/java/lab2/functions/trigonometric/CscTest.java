@@ -3,6 +3,7 @@ package lab2.functions.trigonometric;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import lab2.functions.FunctionsSystem;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,9 +16,9 @@ public class CscTest {
     @Test
     @Parameters({"-1", "1", "-5", "5"})
     public void calc(double x) {
-        FunctionsSystem functionsSystem = new FunctionsSystem();
-        functionsSystem.setX(x);
-        double delta = Math.abs(functionsSystem.calc(eps) - (1 / Math.sin(x)));
+        Csc csc = new Csc();
+        csc.init(x);
+        double delta = Math.abs(csc.calc(eps) - (1 / Math.sin(x)));
         Assert.assertTrue(delta <= eps);
     }
 }

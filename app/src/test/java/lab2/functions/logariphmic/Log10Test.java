@@ -21,7 +21,9 @@ public class Log10Test {
             "420"
     })
     public void calc(double x) {
-        double delta = Math.abs(new Log10(x).calc(eps * eps) - Math.log(x) / Math.log(10));
+        Log10 log10 = new Log10();
+        log10.init(x);
+        double delta = Math.abs(log10.calc(eps * eps) - Math.log(x) / Math.log(10));
         Assert.assertTrue(delta <= eps);
     }
 }

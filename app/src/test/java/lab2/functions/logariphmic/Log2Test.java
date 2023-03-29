@@ -22,7 +22,9 @@ public class Log2Test {
             "42"
     })
     public void calc(double x) {
-        double delta = Math.abs(new Log2(x).calc(eps * eps) - Math.log(x) / Math.log(2));
+        Log2 log2 = new Log2();
+        log2.init(x);
+        double delta = Math.abs(log2.calc(eps * eps) - Math.log(x) / Math.log(2));
         Assert.assertTrue(delta <= eps);
     }
 }

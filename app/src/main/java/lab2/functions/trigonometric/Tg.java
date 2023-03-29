@@ -14,9 +14,19 @@ import lombok.Setter;
 @Setter
 public class Tg implements Func {
     private double x;
+    private Sin sin;
+    private Cos cos;
+
+    public void init(double x) {
+        this.x = x;
+        this.sin = new Sin();
+        this.cos = new Cos();
+        this.sin.init(x);
+        this.cos.init(x);
+    }
 
     @Override
     public double calc(double eps) {
-        return new Sin(x).calc(eps) / new Cos(x).calc(eps);
+        return sin.calc(eps) / cos.calc(eps);
     }
 }

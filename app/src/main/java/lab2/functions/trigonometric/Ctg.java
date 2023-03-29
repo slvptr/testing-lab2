@@ -14,9 +14,19 @@ import lombok.Setter;
 @Setter
 public class Ctg implements Func {
     private double x;
+    private Sin sin;
+    private Cos cos;
+
+    public void init(double x) {
+        this.x = x;
+        this.sin = new Sin();
+        this.cos = new Cos();
+        this.sin.init(x);
+        this.cos.init(x);
+    }
 
     @Override
     public double calc(double eps) {
-        return new Cos(x).calc(eps) / new Sin(x).calc(eps);
+        return cos.calc(eps) / sin.calc(eps);
     }
 }
