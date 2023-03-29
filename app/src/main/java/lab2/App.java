@@ -22,7 +22,7 @@ public class App {
         try {
             CsvUtils csvUtils = new CsvUtils(String.format("csv/%s.csv",
                     function.getClass().getSimpleName()),
-                    function, -3.14, 3.14, 0.2, 0.01);
+                    function, -3.14, 3.14, 0.01, 0.01);
             csvUtils.writeCsv();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");

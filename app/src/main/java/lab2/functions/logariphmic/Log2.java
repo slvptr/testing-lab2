@@ -23,6 +23,6 @@ public class Log2 implements Func {
 
     @Override
     public double calc(double eps) {
-        return new Ln(x).calc(eps) / new Ln(2).calc(eps);
+        return ln.calc(eps) / new Ln(2).calc(eps);
     }
 }
