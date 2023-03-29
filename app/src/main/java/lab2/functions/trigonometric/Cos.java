@@ -28,11 +28,11 @@ public class Cos implements Func {
             }
         }
         if (Math.abs(x) >= 0 && Math.abs(x) < Math.PI / 2) {
-            return Math.sqrt(1 - Math.pow(new Sin(x).calc(eps),2));
+            return Math.sqrt(Math.abs(1 - Math.pow(new Sin(x).calc(eps),2)));
         } else if (Math.abs(x) > (double) 3 / 2 * Math.PI && Math.abs(x) <= 2* Math.PI) {
-            return Math.sqrt(1 - Math.pow(new Sin(x).calc(eps),2));
+            return Math.sqrt(Math.abs(1 - Math.pow(new Sin(x).calc(eps),2)));
         } else {
-            return  - Math.sqrt(1 - Math.pow(new Sin(x).calc(eps),2));
+            return  - Math.sqrt(Math.abs(1 - Math.pow(new Sin(x).calc(eps),2)));
         }
     }
 }

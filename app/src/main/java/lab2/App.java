@@ -4,7 +4,12 @@
 package lab2;
 
 import lab2.functions.Func;
-import lab2.functions.trigonometric.Cos;
+import lab2.functions.FunctionsSystem;
+import lab2.functions.basic.Ln;
+import lab2.functions.basic.Sin;
+import lab2.functions.logariphmic.Log10;
+import lab2.functions.logariphmic.Log2;
+import lab2.functions.trigonometric.*;
 import lab2.utils.CsvUtils;
 import org.checkerframework.checker.units.qual.C;
 
@@ -12,7 +17,7 @@ import java.io.FileNotFoundException;
 
 public class App {
     public static void main(String[] args) {
-        Func function = new Cos();
+        Func function = new FunctionsSystem();
 
         try {
             CsvUtils csvUtils = new CsvUtils(String.format("csv/%s.csv",

@@ -1,16 +1,10 @@
 package lab2.utils;
 
 import lab2.functions.Func;
-import lab2.functions.basic.Ln;
-import lab2.functions.basic.Sin;
-import lab2.functions.logariphmic.Log10;
-import lab2.functions.logariphmic.Log2;
-import lab2.functions.trigonometric.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
